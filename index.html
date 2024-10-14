@@ -11,13 +11,20 @@
     <title>Demo App ElectronJS</title>
   </head>
   <body>
-    <!-- <h1>Hello World!</h1>
-    We are using Node.js <span id="node-version"></span>,
-    Chromium <span id="chrome-version"></span>,
-    and Electron <span id="electron-version"></span>. -->
-    <h1>Thông tin CPU</h1>
-    <!-- <p id="cpu-info"></p> -->
-    <!-- <p>Memory Used: </p> -->
+    <header>
+      <div class="icon-title">
+        <img src="./assets/img/icon.png" alt="" />
+        <div>Demo App</div>
+      </div>
+      <div class="info-header">
+        <div><p>Tên thiết bị: </p><span id="device-name"></span></div>
+        <div>
+          <p>Địa chỉ ví: </p
+          ><span>0x1f9840a85d5aF5bf1D1762F925BDADdC4201F984</span>
+        </div>
+      </div>
+    </header>
+    <p class="heading">Thông tin thiết bị</p>
     <div class="card">
       <div class="img">
         <img src="./assets/img/cpu.png" alt="CPU" />
@@ -29,7 +36,7 @@
     </div>
     <div class="card">
       <div class="img">
-        <img src="./assets/img/cpu.png" alt="CPU" />
+        <img src="./assets/img/ram.png" alt="CPU" />
       </div>
       <div class="card-info">
         <p>Memory</p>
@@ -45,8 +52,14 @@
         <p id="disk-info">Loading...</p>
       </div>
     </div>
-    <h1 style="padding-top: 20px; padding-bottom: 20px;">Container đang chạy</h1>
-    <table id="containerTable" style="width: 100%;">
+    <p class="heading">Trạng thái docker: <span id="docker-status"></span><button class="action-docker" id="action-docker">Tắt</button></p>
+    <p class="guide-win">Hướng dẫn: Đây là hướng dẫn bật docker cho windows</p>
+    <p class="guide-linux">Hướng dẫn: Đây là hướng dẫn bật docker cho linux</p>
+    <p class="guide-mac">Hướng dẫn: Đây là hướng dẫn bật docker cho macos</p>
+    <p class="sub-heading">
+      Danh sách các container:
+    </p>
+    <table id="containerTable" style="width: 100%">
       <tr>
         <th>ID</th>
         <th>Name</th>

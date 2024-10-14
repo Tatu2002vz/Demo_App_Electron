@@ -1,4 +1,4 @@
-const { app, BrowserWindow } = require('electron/main')
+const { app, BrowserWindow, autoUpdater } = require('electron/main')
 const path = require('node:path')
 const si = require('systeminformation');
 require("electron-reload")(__dirname)
@@ -18,6 +18,10 @@ function createWindow () {
 }
 
 app.whenReady().then(() => {
+  autoUpdater.setFeedURL({
+    url: '',
+    autoDownload: false,
+  })
   createWindow()
 
   app.on('activate', () => {
