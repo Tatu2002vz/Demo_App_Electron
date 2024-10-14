@@ -1,9 +1,4 @@
-const os = require("os");
 const si = require("systeminformation");
-const { exec } = require("node:child_process");
-
-const Docker = require("dockerode");
-
 function getGigabytes(a) {
   return (a / 1024 / 1024 / 1024).toFixed(2);
 }
@@ -21,7 +16,7 @@ setInterval(async () => {
   } catch (error) {
     alert(error.message);
   }
-}, 200); // Lấy thông tin mỗi giây
+}, 3000); // Lấy thông tin mỗi giây
 
 const getDisk = async () => {
   try {
@@ -44,36 +39,3 @@ const getDisk = async () => {
   }
 };
 getDisk();
-
-// exec('docker ps', (err, stdout, stderr) => {
-//   if (err) {
-//     console.error(err);
-//     return;
-//   }
-//   console.log(typeof stdout);
-// });
-
-const docker = new Docker();
-
-docker.listContainers({ all: false }, (err, containers) => {
-  if (err) {
-    console.error(err);
-  } else {
-    containers.forEach((containerInfo) => {
-      console.log("Container ID:", containerInfo.Id);
-      console.log("Container Name:", containerInfo.Names);
-      console.log("Container State:", containerInfo.State);
-    });
-    const table = document.getElementById("containerTable");
-    containers.forEach((containerInfo) => {
-      let row = table.insertRow();
-      let cell1 = row.insertCell(0);
-      let cell2 = row.insertCell(1);
-      let cell3 = row.insertCell(2);
-
-      cell1.innerHTML = containerInfo.Id;
-      cell2.innerHTML = containerInfo.Names;
-      cell3.innerHTML = containerInfo.State;
-    });
-  }
-});

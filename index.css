@@ -21,10 +21,17 @@
     justify-content: space-around;
     margin-left: 20px;
 }
+table {
+    width: 95%;
+    margin: 0 auto;
+}
 table, tr, th, td {
     border: 1px solid #ccc;
     border-collapse: collapse;
 }
 tr, th, td {
     padding: 4px 16px;
+}
+h1 {
+    margin-left: 4px;
 }
