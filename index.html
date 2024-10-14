@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'"
+    />
+    <link rel="stylesheet" href="index.css" />
+    <title>Demo App ElectronJS</title>
+  </head>
+  <body>
+    <!-- <h1>Hello World!</h1>
+    We are using Node.js <span id="node-version"></span>,
+    Chromium <span id="chrome-version"></span>,
+    and Electron <span id="electron-version"></span>. -->
+    <h1>Thông tin CPU</h1>
+    <!-- <p id="cpu-info"></p> -->
+    <!-- <p>Memory Used: </p> -->
+    <div class="card">
+      <div class="img">
+        <img src="./assets/img/cpu.png" alt="CPU" />
+      </div>
+      <div class="card-info">
+        <p>CPU</p>
+        <p id="cpu-info"></p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="img">
+        <img src="./assets/img/cpu.png" alt="CPU" />
+      </div>
+      <div class="card-info">
+        <p>Memory</p>
+        <p id="memory-info"></p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="img">
+        <img src="./assets/img/disk.png" alt="CPU" />
+      </div>
+      <div class="card-info">
+        <p>Disk</p>
+        <p id="disk-info"></p>
+      </div>
+    </div>
+    <h1 style="padding-top: 20px; padding-bottom: 20px;">Container đang chạy</h1>
+    <table id="containerTable" style="width: 100%;">
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>State</th>
+      </tr>
+    </table>
+  </body>
+  <script src="renderer.js"></script>
+</html>
