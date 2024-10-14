@@ -51,7 +51,7 @@ setInterval(async () => {
     memoryInfo.innerHTML = `<p>${getGigabytes(memory.used)} / ${getGigabytes(
       memory.total
     )} GB (${(memory.used / memory.total).toFixed(2) * 100}%)</p>`;
-    cpuInfo.innerHTML = `${cpu.speedMax} GHz`;
+    cpuInfo.innerHTML = `${cpu.speed} GHz`;
   } catch (error) {
     alert(error.message);
   }
