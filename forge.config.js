@@ -23,13 +23,6 @@ module.exports = {
       name: '@electron-forge/maker-rpm',
       config: {},
     },
-    // {
-    //   name: '@electron-forge/maker-squirrel',
-    //   config: {
-    //     certificateFile: './cert.pfx',
-    //     certificatePassword: process.env.CERTIFICATE_PASSWORD
-    //   }
-    // }
   ],
   plugins: [
     {
