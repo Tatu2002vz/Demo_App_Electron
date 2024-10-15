@@ -1,8 +1,5 @@
 const { app, BrowserWindow } = require("electron/main");
-const path = require("node:path");
 require("electron-reload")(__dirname);
-const abc = require("electron-squirrel-startup");
-console.log("acbd:: " + JSON.stringify(abc));
 if (require("electron-squirrel-startup")) {
   app.quit();
 }
@@ -13,7 +10,6 @@ function createWindow() {
     height: 600,
     icon: __dirname + "/assets/img/icon.ico",
     webPreferences: {
-      // preload: path.join(__dirname, 'preload.js'),
       nodeIntegration: true,
       contextIsolation: false,
     },

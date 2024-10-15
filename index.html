@@ -17,10 +17,13 @@
         <div>Demo Worker App</div>
       </div>
       <div class="info-header">
-        <div><p>Tên thiết bị: </p><span id="device-name"></span></div>
         <div>
-          <p>Địa chỉ ví: </p
-          ><span>0x1f9840a85d5aF5bf1D1762F925BDADdC4201F984</span>
+          <p>Tên thiết bị:</p>
+          <span id="device-name"></span>
+        </div>
+        <div>
+          <p>Địa chỉ ví:</p>
+          <span>0x1f9840a85d5aF5bf1D1762F925BDADdC4201F984</span>
         </div>
       </div>
     </header>
@@ -31,7 +34,7 @@
         <img src="./assets/img/cpu.png" alt="CPU" />
       </div>
       <div class="card-info">
-        <p>CPU</p>
+        <p>CPU<span id="cpu-name"></span></p>
         <p id="cpu-info">Loading...</p>
       </div>
     </div>
@@ -53,13 +56,19 @@
         <p id="disk-info">Loading...</p>
       </div>
     </div>
-    <p class="heading">Trạng thái docker: <span id="docker-status"></span><button class="action-docker" id="action-docker">Tắt</button></p>
-    <p class="guide-win"><a href="#">Link</a> hướng dẫn bật docker cho windows</p>
-    <p class="guide-linux"><a href="#">Link</a> hướng dẫn bật docker cho linux</p>
-    <p class="guide-mac"><a href="#">Link</a> hướng dẫn bật docker cho macos</p>
-    <p class="sub-heading">
-      Danh sách các task đang chạy:
+    <p class="heading">
+      Trạng thái docker: <span id="docker-status"></span
+      >
+      <!-- <button class="action-docker" id="action-docker">Tắt</button> -->
     </p>
+    <p class="guide-win">
+      <a href="#">Link</a> hướng dẫn bật docker cho windows
+    </p>
+    <p class="guide-linux">
+      <a href="#">Link</a> hướng dẫn bật docker cho linux
+    </p>
+    <p class="guide-mac"><a href="#">Link</a> hướng dẫn bật docker cho macos</p>
+    <p class="sub-heading">Danh sách các task đang chạy:</p>
     <table id="containerTable" style="width: 100%">
       <tr>
         <th>ID</th>

@@ -120,3 +120,8 @@ p.sub-heading {
   color: red;
   font-style: italic;
 }
+
+
+#cpu-name {
+  margin-left: 8px;
+}

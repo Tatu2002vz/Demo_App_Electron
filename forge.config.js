@@ -28,19 +28,7 @@ module.exports = {
         }
       },
     },
-    {
-      // Path to the icon to use for the app in the DMG window
-      name: '@electron-forge/maker-dmg',
-      config: {
-        icon: 'assets/img/icon.icns'
-      }
-    },
-    {
-      name: '@electron-forge/maker-wix',
-      config: {
-        icon: 'assets/img/icon.ico'
-      }
-    },
+
     {
       name: "@electron-forge/maker-rpm",
       config: {
