@@ -8,13 +8,13 @@
       content="default-src 'self'; script-src 'self'"
     />
     <link rel="stylesheet" href="index.css" />
-    <title>Demo App ElectronJS</title>
+    <title>Demo Worker App</title>
   </head>
   <body>
     <header>
       <div class="icon-title">
-        <img src="./assets/img/icon.png" alt="" />
-        <div>Demo App</div>
+        <img src="./assets/img/icon.jpg" alt="" />
+        <div>Demo Worker App</div>
       </div>
       <div class="info-header">
         <div><p>Tên thiết bị: </p><span id="device-name"></span></div>
@@ -25,6 +25,7 @@
       </div>
     </header>
     <p class="heading">Thông tin thiết bị</p>
+    <p class="sub-heading">Device ID: D1762F925BDADdC</p>
     <div class="card">
       <div class="img">
         <img src="./assets/img/cpu.png" alt="CPU" />
@@ -53,11 +54,11 @@
       </div>
     </div>
     <p class="heading">Trạng thái docker: <span id="docker-status"></span><button class="action-docker" id="action-docker">Tắt</button></p>
-    <p class="guide-win">Hướng dẫn: Đây là hướng dẫn bật docker cho windows</p>
-    <p class="guide-linux">Hướng dẫn: Đây là hướng dẫn bật docker cho linux</p>
-    <p class="guide-mac">Hướng dẫn: Đây là hướng dẫn bật docker cho macos</p>
+    <p class="guide-win"><a href="#">Link</a> hướng dẫn bật docker cho windows</p>
+    <p class="guide-linux"><a href="#">Link</a> hướng dẫn bật docker cho linux</p>
+    <p class="guide-mac"><a href="#">Link</a> hướng dẫn bật docker cho macos</p>
     <p class="sub-heading">
-      Danh sách các container:
+      Danh sách các task đang chạy:
     </p>
     <table id="containerTable" style="width: 100%">
       <tr>

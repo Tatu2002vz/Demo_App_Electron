@@ -44,18 +44,31 @@ function getGigabytes(a) {
 setInterval(async () => {
   try {
     const memory = await si.mem();
-    const cpu = await si.cpu();
+    const cpu = process.getCPUUsage();
     const memoryInfo = document.getElementById("memory-info");
     const cpuInfo = document.getElementById("cpu-info");
     // const process = await si.process();
     memoryInfo.innerHTML = `<p>${getGigabytes(memory.used)} / ${getGigabytes(
       memory.total
     )} GB (${(memory.used / memory.total).toFixed(2) * 100}%)</p>`;
-    cpuInfo.innerHTML = `${cpu.speed} GHz`;
+    // cpuInfo.innerHTML = `${(cpu.percentCPUUsage * 100).toFixed(0)}% - ${cpu.cumulativeCPUUsage}`;
+    console.log(cpu.percentCPUUsage)
   } catch (error) {
     alert(error.message);
   }
 }, 3000); // Lấy thông tin mỗi giây
+
+setInterval(async () => {
+  try {
+    const cpuInfo = document.getElementById("cpu-info");
+
+    const cpu = process.getCPUUsage();
+    cpuInfo.innerHTML = `${(cpu.percentCPUUsage * 100).toFixed(0)}%`;
+    console.log(cpu.percentCPUUsage)
+  } catch (error) {
+    alert(error.message);
+  }
+}, 1000); // Lấy thông tin mỗi giây
 
 // lấy thông tin ổ cứng
 const getDisk = async () => {
