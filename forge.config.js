@@ -5,7 +5,9 @@ module.exports = {
   packagerConfig: {
     asar: true,
     icon: "assets/img/icon",
-    name: "Demo Worker Application",
+    name: "Demo Worker App",
+    productName: "Demo Worker App",
+    executableName: "demo-worker-app"
   },
   rebuildConfig: {},
   makers: [
@@ -24,7 +26,7 @@ module.exports = {
       name: "@electron-forge/maker-deb",
       config: {
         options: {
-          icon: "assets/img/icon.png",
+         icon: "assets/img/icon.png",
         }
       },
     },

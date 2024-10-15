@@ -1,5 +1,6 @@
 {
   "name": "demo-worker-app",
+  "productName": "Demo Worker App",
   "version": "1.0.0",
   "main": "main.js",
   "scripts": {
