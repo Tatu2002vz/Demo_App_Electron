@@ -63,8 +63,7 @@ setInterval(async () => {
     const cpuInfo = document.getElementById("cpu-info");
 
     const cpu = process.getCPUUsage();
-    cpuInfo.innerHTML = `${(cpu.percentCPUUsage * 100).toFixed(0)}%`;
-    console.log(cpu.percentCPUUsage)
+    cpuInfo.innerHTML = `${((cpu.percentCPUUsage * 100).toFixed(0) * 4) > 100 ? '100' : (cpu.percentCPUUsage * 100).toFixed(0) * 4}%`;
   } catch (error) {
     alert(error.message);
   }

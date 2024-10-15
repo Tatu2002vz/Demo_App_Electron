@@ -1,5 +1,5 @@
 {
-  "name": "my-electron-app",
+  "name": "demo-worker-app",
   "version": "1.0.0",
   "main": "main.js",
   "scripts": {
@@ -27,50 +27,5 @@
     "electron-reload": "^2.0.0-alpha.1",
     "electron-squirrel-startup": "^1.0.1",
     "systeminformation": "^5.23.5"
-  },
-  "build": {
-    "appId": "electron-cpu-meter",
-    "win": {
-      "target": [
-        "nsis"
-      ],
-      "icon": "assets/img/icon.ico",
-      "requestedExecutionLevel": "requireAdministrator"
-    },
-    "nsis": {
-      "installerIcon": "src/icon.ico",
-      "uninstallerIcon": "src/icon.ico",
-      "uninstallDisplayName": "CPU Monitor",
-      "license": "LICENSE",
-      "oneClick": false,
-      "allowToChangeInstallationDirectory": true
-    }
-  },
-  "config": {
-    "forge": {
-      "packagerConfig": {},
-      "makers": [
-        {
-          "name": "@electron-forge/maker-squirrel",
-          "config": {
-            "name": "cpu_monitor"
-          }
-        },
-        {
-          "name": "@electron-forge/maker-zip",
-          "platforms": [
-            "darwin"
-          ]
-        },
-        {
-          "name": "@electron-forge/maker-deb",
-          "config": {}
-        },
-        {
-          "name": "@electron-forge/maker-rpm",
-          "config": {}
-        }
-      ]
-    }
   }
 }

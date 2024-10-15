@@ -1,6 +1,8 @@
 const { app, BrowserWindow } = require("electron/main");
 const path = require("node:path");
 require("electron-reload")(__dirname);
+const abc = require("electron-squirrel-startup");
+console.log("acbd:: " + JSON.stringify(abc));
 if (require("electron-squirrel-startup")) {
   app.quit();
 }
@@ -20,11 +22,10 @@ function createWindow() {
   win.loadFile("index.html");
 }
 
-// app.whenReady().then(() => {
-//   createWindow()
-
-// })
-app.on("ready", createWindow);
+app.whenReady().then(() => {
+  createWindow();
+});
+// app.on("ready", createWindow);
 
 app.on("activate", () => {
   if (BrowserWindow.getAllWindows().length === 0) {
