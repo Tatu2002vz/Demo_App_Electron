@@ -6,15 +6,15 @@ if (require("electron-squirrel-startup")) {
 function createWindow() {
   const win = new BrowserWindow({
     autoHideMenuBar: true,
-    width: 800,
-    height: 600,
+    width: 1280,
+    height: 768,
     icon: __dirname + "/assets/img/icon.ico",
     webPreferences: {
       nodeIntegration: true,
       contextIsolation: false,
     },
   });
-  // win.webContents.openDevTools();
+  win.webContents.openDevTools();
   win.loadFile("index.html");
 }
 

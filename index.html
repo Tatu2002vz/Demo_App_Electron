@@ -27,38 +27,61 @@
         </div>
       </div>
     </header>
-    <p class="heading">Thông tin thiết bị</p>
-    <p class="sub-heading">Device ID: D1762F925BDADdC</p>
-    <div class="card">
-      <div class="img">
-        <img src="./assets/img/cpu.png" alt="CPU" />
+    <div class="info">
+      <div>
+        <p class="heading">Thông tin thiết bị</p>
+        <p class="sub-heading">Device ID: D1762F925BDADdC</p>
+        <div class="card">
+          <div class="img">
+            <img src="./assets/img/cpu.png" alt="CPU" />
+          </div>
+          <div class="card-info">
+            <p>CPU<span id="cpu-name"></span></p>
+            <p id="cpu-info">Loading...</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="img">
+            <img src="./assets/img/ram.png" alt="CPU" />
+          </div>
+          <div class="card-info">
+            <p>Memory</p>
+            <p id="memory-info">Loading...</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="img">
+            <img src="./assets/img/disk.png" alt="CPU" />
+          </div>
+          <div class="card-info">
+            <p>Disk</p>
+            <p id="disk-info">Loading...</p>
+          </div>
+        </div>
       </div>
-      <div class="card-info">
-        <p>CPU<span id="cpu-name"></span></p>
-        <p id="cpu-info">Loading...</p>
+      <div class="network-monitoring">
+        <p class="heading">Network Monitor</p>
+        <div class="network">
+          <div class="network-info">
+            <div class="network-info-img">
+              <img src="./assets/img/up-arrow.png" alt="" />
+              <p>Upload</p>
+            </div>
+            <div id="speedUp">0 Kb/s</div>
+          </div>
+          <div class="network-info">
+            <div class="network-info-img">
+              <img src="./assets/img/down-arrow.png" alt="" />
+              <p>Download</p>
+            </div>
+            <div id="speedDown">0 Kb/s</div>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="card">
-      <div class="img">
-        <img src="./assets/img/ram.png" alt="CPU" />
-      </div>
-      <div class="card-info">
-        <p>Memory</p>
-        <p id="memory-info">Loading...</p>
-      </div>
-    </div>
-    <div class="card">
-      <div class="img">
-        <img src="./assets/img/disk.png" alt="CPU" />
-      </div>
-      <div class="card-info">
-        <p>Disk</p>
-        <p id="disk-info">Loading...</p>
-      </div>
-    </div>
+
     <p class="heading">
-      Trạng thái docker: <span id="docker-status"></span
-      >
+      Trạng thái docker: <span id="docker-status"></span>
       <!-- <button class="action-docker" id="action-docker">Tắt</button> -->
     </p>
     <p class="guide-win">
@@ -68,12 +91,25 @@
       <a href="#">Link</a> hướng dẫn bật docker cho linux
     </p>
     <p class="guide-mac"><a href="#">Link</a> hướng dẫn bật docker cho macos</p>
+    <div class="">
+      <p class="sub-heading">Thêm task mới:</p>
+      <div class="form-new-task">
+        <div><input type="text" id="input-image" placeholder="Nhập image" /></div>
+        <div><input type="text" id="input-container" placeholder="Nhập tên container" /></div>
+        <button id="create-new-task">Tạo mới</button>
+        <div class="loading">
+          <span class="loader"></span>
+        <span>Vui lòng đợi...</span>
+        </div>
+      </div>
+    </div>
     <p class="sub-heading">Danh sách các task đang chạy:</p>
     <table id="containerTable" style="width: 100%">
       <tr>
         <th>ID</th>
         <th>Name</th>
         <th>State</th>
+        <th>Action</th>
       </tr>
     </table>
   </body>

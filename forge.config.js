@@ -7,15 +7,15 @@ module.exports = {
     icon: "assets/img/icon",
     name: "Demo Worker App",
     productName: "Demo Worker App",
-    executableName: "demo-worker-app"
+    executableName: "demo-worker-app",
   },
   rebuildConfig: {},
   makers: [
     {
       name: "@electron-forge/maker-squirrel",
       config: {
-        setupIcon: 'assets/img/icon.ico',
-        iconUrl: 'https://cms.x-or.cloud/uploads/icon_2f1403c422.ico'
+        setupIcon: "assets/img/icon.ico",
+        iconUrl: "https://cms.x-or.cloud/uploads/icon_2f1403c422.ico",
       },
     },
     {
@@ -26,24 +26,17 @@ module.exports = {
       name: "@electron-forge/maker-deb",
       config: {
         options: {
-         icon: "assets/img/icon.png",
-        }
+          icon: "assets/img/icon.png",
+        },
       },
     },
 
     {
       name: "@electron-forge/maker-rpm",
       config: {
-        icon: 'assets/img/icon.ico'
+        icon: "assets/img/icon.ico",
       },
     },
-    // {
-    //   name: '@electron-forge/maker-squirrel',
-    //   config: {
-    //     certificateFile: './cert.pfx',
-    //     certificatePassword: process.env.CERTIFICATE_PASSWORD
-    //   }
-    // }
   ],
   plugins: [
     {
