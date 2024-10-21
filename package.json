@@ -27,6 +27,7 @@
     "dockerode": "^4.0.2",
     "electron-reload": "^2.0.0-alpha.1",
     "electron-squirrel-startup": "^1.0.1",
+    "ps-list": "^8.1.1",
     "systeminformation": "^5.23.5"
   }
 }

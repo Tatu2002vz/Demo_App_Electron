@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 body {
-  padding: 0 20px;
+  padding: 0 20px 20px 20px;
 }
 .img {
   width: 50px;
@@ -156,8 +156,7 @@ p.sub-heading {
   border-radius: 99999px;
   padding: 4px;
 }
-.network-info:first-child
-:first-child img {
+.network-info:first-child :first-child img {
   border-color: red;
 }
 .network-info:last-child img {
@@ -181,7 +180,6 @@ p.sub-heading {
   margin-right: 16px;
   outline: none;
   border: 1px solid #ccc;
-
 }
 #create-new-task {
   padding: 8px 16px;
@@ -199,12 +197,11 @@ p.sub-heading {
 }
 
 .actionBtn button:first-child {
-  flex-grow: 1;
+  flex: 1/2;
   margin-right: 4px;
 }
 
 .loader {
-
   display: inline-block;
   transform: rotateZ(45deg);
   perspective: 1000px;
@@ -215,24 +212,24 @@ p.sub-heading {
   margin-left: 16px;
   margin-right: 8px;
 }
-  .loader:before,
-  .loader:after {
-    content: '';
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: inherit;
-    height: inherit;
-    border-radius: 50%;
-    transform: rotateX(70deg);
-    animation: 1s spin linear infinite;
-  }
-  .loader:after {
-    color: #FF3D00;
-    transform: rotateY(70deg);
-    animation-delay: .4s;
-  }
+.loader:before,
+.loader:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: inherit;
+  height: inherit;
+  border-radius: 50%;
+  transform: rotateX(70deg);
+  animation: 1s spin linear infinite;
+}
+.loader:after {
+  color: #ff3d00;
+  transform: rotateY(70deg);
+  animation-delay: 0.4s;
+}
 
 @keyframes rotate {
   0% {
@@ -255,32 +252,96 @@ p.sub-heading {
 @keyframes spin {
   0%,
   100% {
-    box-shadow: .2em 0px 0 0px currentcolor;
+    box-shadow: 0.2em 0px 0 0px currentcolor;
   }
   12% {
-    box-shadow: .2em .2em 0 0 currentcolor;
+    box-shadow: 0.2em 0.2em 0 0 currentcolor;
   }
   25% {
-    box-shadow: 0 .2em 0 0px currentcolor;
+    box-shadow: 0 0.2em 0 0px currentcolor;
   }
   37% {
-    box-shadow: -.2em .2em 0 0 currentcolor;
+    box-shadow: -0.2em 0.2em 0 0 currentcolor;
   }
   50% {
-    box-shadow: -.2em 0 0 0 currentcolor;
+    box-shadow: -0.2em 0 0 0 currentcolor;
   }
   62% {
-    box-shadow: -.2em -.2em 0 0 currentcolor;
+    box-shadow: -0.2em -0.2em 0 0 currentcolor;
   }
   75% {
-    box-shadow: 0px -.2em 0 0 currentcolor;
+    box-shadow: 0px -0.2em 0 0 currentcolor;
   }
   87% {
-    box-shadow: .2em -.2em 0 0 currentcolor;
+    box-shadow: 0.2em -0.2em 0 0 currentcolor;
   }
 }
 
 .loading {
   display: flex;
   align-items: center;
+}
+#loading,
+.loading {
+  opacity: 0;
+}
+.card-info > p:first-child {
+  font-weight: 600;
+}
+
+#error {
+  color: red;
+}
+
+body {
+  position: relative;
+}
+#main {
+  display: none;
+}
+#dialog {
+  width: 400px;
+  /* height: 400px; */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 28px;
+  /* text-align: center; */
+}
+
+#input-token {
+  padding: 8px 16px;
+  border: 1px solid #ccc;
+  outline: 0;
+  border-radius: 99999px;
+  width: 60%;
+}
+
+#dialog > div {
+  width: 100%;
+  margin-top: 20px;
+  text-align: right;
+}
+
+#btn-connect {
+  border: 1px solid #ccc;
+  border-radius: 99999px;
+  outline: 0;
+  padding: 8px 16px;
+  width: 40%;
+  cursor: pointer;
+  background: #0d64de;
+  color: white;
+  border: none;
+}
+
+#id-container {
+  max-width: 10ch;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: inline-block; 
 }
