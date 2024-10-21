@@ -346,78 +346,51 @@ window.onload = async () => {
     console.log("image: " + imageVal);
     console.log("container: " + containerVal);
     loading.style.opacity = 1;
-    // const exec = util.promisify(require("node:child_process").exec);
-    // const { stdout, stderr } = await exec(str);
 
-    docker.pull(imageVal, function (err, stream) {
-      if (err) {
-        console.error("Error pulling image:", err);
-      } else {
-        docker.modem.followProgress(stream, onFinished, onProgress);
-
-        function onFinished(err, output) {
-          if (err) {
-            console.error("Error pulling image:", err);
-            errorMessage.innerHTML = "Error pulling image: " + err.message;
-          } else {
-            console.log("Image pulled successfully.");
-            docker.createContainer(
-              { name: containerVal, Image: imageVal },
-              (err, container) => {
-                if (err) {
-                  errorMessage.innerHTML = "Error create container: " + err.message;
-                  loading.style.opacity = 0;
-                  return;
-                }
-
-                container.start(async function (err, data) {
+    if(imageVal !== "" && containerVal !== "") {
+      docker.pull(imageVal, function (err, stream) {
+        if (err) {
+          console.error("Error pulling image:", err);
+        } else {
+          docker.modem.followProgress(stream, onFinished, onProgress);
+  
+          function onFinished(err, output) {
+            if (err) {
+              console.error("Error pulling image:", err);
+              errorMessage.innerHTML = "Error pulling image: " + err.message;
+            } else {
+              console.log("Image pulled successfully.");
+              docker.createContainer(
+                { name: containerVal, Image: imageVal },
+                (err, container) => {
                   if (err) {
-                    console.error(err);
+                    errorMessage.innerHTML = "Error create container: " + err.message;
+                    loading.style.opacity = 0;
                     return;
                   }
-                  await getInfoDocker();
-                  loading.style.opacity = 0;
-                });
-              }
-            );
+  
+                  container.start(async function (err, data) {
+                    if (err) {
+                      console.error(err);
+                      return;
+                    }
+                    await getInfoDocker();
+                    loading.style.opacity = 0;
+                  });
+                }
+              );
+            }
+          }
+  
+          function onProgress(event) {
+            console.log(event.status);
+            errorMessage.innerHTML = event.status
           }
         }
-
-        function onProgress(event) {
-          console.log(event.status);
-        }
-      }
-    });
-
-    // const createCmd = 'docker run --name ' + containerVal + ' ' + imageVal;
-
-    // const output =  execSync(createCmd)
-    // console.log(output.toString())
-
-    // const command = "docker";
-    // const args = ["run", "--name", containerVal, imageVal];
-
-    // const dockerProcess = spawn(command, args);
-
-    // dockerProcess.stdout.on("data", (data) => {
-    //   console.log(`stdout: ${data}`);
-    //   errorMessage.innerHTML = data;
-
-    // });
-
-    // dockerProcess.stderr.on("data", (data) => {
-    //   console.error(`stderr: ${data}`);
-    //   if(data.includes('docker login')) {
-    //     exec('docker login')
-    //   }
-    //   errorMessage.innerHTML = data.toString();
-
-    // });
-
-    // dockerProcess.on("close", (code) => {
-    //   console.log(`child process exited with code ${code}`);
-    //   errorMessage.innerHTML = data;
-    // });
+      });
+    } else {
+      errorMessage.innerHTML = "Vui lòng nhập đẩy đủ các trường!"
+    }
   });
 
   async function stopContainer(containerId) {
